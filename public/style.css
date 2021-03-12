@@ -5,7 +5,12 @@ body {
   box-sizing: border-box;
 }
 
-body {
-  width: 100%;
-  height: 100%;
+.box {
+  background-color: rgba(73, 67, 67, 0.75);
+}
+
+/* this needs to be in component but there are some glaring render issues atm. */
+.is-half .box {
+  max-height: 400px;
+  overflow: scroll;
 }
