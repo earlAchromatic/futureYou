@@ -1,6 +1,6 @@
 <template>
   <div class="box">
-    <h1 class="title">Add Items You May Purchase</h1>
+    <h1 class="title">{{ this.$store.state.ListItems[0].itemName }}</h1>
     <div class="columns">
       <div class="column is-half">
         <input
@@ -22,7 +22,11 @@
         <button
           class="button is-dark"
           @click="
-            addItem({ itemName: itemName, cost: itemCost, futureCost: 45 })
+            this.$store.commit('addItem', {
+              itemName: itemName,
+              cost: itemCost,
+              futureCost: 45,
+            })
           "
         >
           Add Item
@@ -33,7 +37,6 @@
 </template>
 
 <script lang="ts">
-import { mapActions } from "vuex";
 export default {
   name: "ItemInput",
   components: {},
@@ -41,20 +44,12 @@ export default {
     return {
       itemName: "",
       itemCost: 0,
+      //data: this.$store.state,
     };
   },
-  methods: {
-    ...mapActions(["addItem"]),
-    // enterItem(itemName: string, itemCost: number) {
-    //   let obj: object = {
-    //     itemName: itemName,
-    //     cost: itemCost,
-    //   };
-    //   console.log(this.$store.state.itemListData);
-    // },
-    // enterItem: function(): any {
-    //   console.log(this.$store.state.itemListData);
-    // },
+  methods: {},
+  created() {
+    console.log("created");
   },
 };
 </script>

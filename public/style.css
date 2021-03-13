@@ -10,7 +10,3 @@ body {
 }
 
 /* this needs to be in component but there are some glaring render issues atm. */
-.is-half .box {
-  max-height: 400px;
-  overflow: scroll;
-}

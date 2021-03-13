@@ -9,10 +9,7 @@
         <th></th>
       </thead>
       <tbody>
-        <tr
-          v-for="(value, index) in this.$store.state.itemListData"
-          :key="index"
-        >
+        <tr v-for="(value, index) in this.$store.state.ListItems" :key="index">
           <td>{{ value.itemName }}</td>
           <td>{{ value.cost }}</td>
           <td>{{ value.futureCost }}</td>
